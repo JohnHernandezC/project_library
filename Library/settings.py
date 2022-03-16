@@ -55,7 +55,7 @@ ROOT_URLCONF = 'Library.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [],#si agrego el templates para todas las app puedo agregar la direccion de la carpeta aqui
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

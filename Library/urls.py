@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from Apps.booksApp.views import inicio
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('libro/', include(('Apps.booksApp.urls','libro'))),
+    path('libros/', include(('Apps.booksApp.urls','libro'))),
+    path('', inicio,name='index'),
     
 ]
