@@ -1,0 +1,16 @@
+{% extends 'libros/libros.html'%}
+
+{% block title %}eliminar{% endblock %}
+
+{% block body %}
+       <form method="POST" >
+        {% csrf_token %}
+        <h2>desea eliminar el registro de {{ autors.nombre }}</h2>
+        <button type="submit">Eliminar</button>
+        <a href="{% url 'libro:listarA' %}">cancelar</a>
+       
+
+        
+        
+    </form>
+    {% endblock %}

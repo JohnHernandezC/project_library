@@ -1,0 +1,53 @@
+{% extends 'libros/libros.html'%}
+
+{% block title %}listar{% endblock %}
+
+{% block body %}
+       {% if autorL %}
+       <table class="default" border="1" >
+
+        <tr>
+      
+          <th>Nombre</th>
+      
+          <th>Apellidos</th>
+      
+          <th>Nacionalidad</th>
+
+          <th>Descripcion</th>
+
+          <th>Opciones</th>
+      
+        </tr>
+      {% for i in autorL %}
+        <tr>
+      
+          <td>{{i.nombre}}</td>
+      
+          <td>{{i.apellido}}</td>
+      
+          <td>{{i.nacionalidad}}</td>
+
+          <td>{{i.descripcion}}</td>
+          <!--
+           <td><a href="editar/{{i.id}}">Editar</a>
+          -->
+          <td><a href="{% url 'libro:editarA' i.id %}">Editar</a> <!--usamos el nmbre definido en
+          la url principal  
+           -->
+
+         </td>
+         <td><a href="{% url 'libro:eliminarA' i.id %}">Eliminar</a>
+             
+           </td>
+      
+        </tr>
+        {% endfor %}
+      
+    
+      </table>
+       {% else %}
+       <h1>No hay autores</h1>
+       {% endif %}
+
+    {% endblock %}
